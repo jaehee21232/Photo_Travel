@@ -26,17 +26,17 @@ class LogoScreen extends StatelessWidget {
                 const SizedBox(
                   height: 16,
                 ),
-                InkWell(
-                  onTap: () {
-                    context.go('/tab-main');
-                  },
-                  child: Container(
-                    width: size.width * (0.55),
-                    height: size.width * (0.12),
-                    decoration: BoxDecoration(
-                        border: Border.all(),
-                        color: Theme.of(context).canvasColor,
-                        borderRadius: BorderRadius.circular(8)),
+                Container(
+                  width: size.width * (0.55),
+                  height: size.width * (0.12),
+                  decoration: BoxDecoration(
+                      border: Border.all(),
+                      color: Theme.of(context).canvasColor,
+                      borderRadius: BorderRadius.circular(8)),
+                  child: InkWell(
+                    onTap: () {
+                      context.go('/tab-main');
+                    },
                     child: Center(
                       child: Text(
                         "시작하기",
