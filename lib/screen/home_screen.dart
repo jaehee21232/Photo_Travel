@@ -37,25 +37,37 @@ class _HomeScreenState extends State<HomeScreen> {
     Size size = MediaQuery.of(context).size;
     bool lightTheme =
         MediaQuery.of(context).platformBrightness == Brightness.light;
-    return Scaffold(
-      appBar: AppBar(
-        title: Image.asset(
-          'assets/imgs/logo/Logo_${lightTheme ? 'black' : 'white'}.png',
-          scale: size.width * (0.06),
+    return Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              fit: BoxFit.cover,
+              image: NetworkImage(
+                  'https://t1.daumcdn.net/cfile/tistory/99AEC73F5BACE4761F'))),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          title: Image.asset(
+            'assets/imgs/logo/Logo_${lightTheme ? 'black' : 'white'}.png',
+            scale: size.width * (0.06),
+          ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            children: [
-              BannerCarousel.fullScreen(
-                banners: listBanners,
-                animation: false,
-                pageController: pageController,
-              ),
-              WeatherWidget(),
-            ],
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                BannerCarousel.fullScreen(
+                  banners: listBanners,
+                  animation: false,
+                  pageController: pageController,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                WeatherWidget(),
+              ],
+            ),
           ),
         ),
       ),
