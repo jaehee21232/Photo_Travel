@@ -3,7 +3,7 @@ import 'package:html/dom.dart';
 import 'package:html/parser.dart' as parser;
 import 'package:photo_travel/models/weather_model.dart';
 
-Future<WeatherData> getWeatherData(String name) async {
+Future<WeatherModel> getWeatherData(String name) async {
   var uri =
       Uri.parse('https://www.weather.go.kr/w/obs-climate/land/city-obs.do');
   final response = await http.get(uri);
@@ -20,8 +20,9 @@ Future<WeatherData> getWeatherData(String name) async {
       )
       .toList()[0]
       .getElementsByTagName('td');
-  return WeatherData(
+  return WeatherModel(
       name: data[0].text,
+      weather: data[1].text,
       vs: double.parse(data[2].text),
       ta: double.parse(data[5].text),
       pta: double.parse(data[7].text),

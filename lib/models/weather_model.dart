@@ -4,6 +4,7 @@ class WeatherModel {
   double ta; //기온
   double pta; //체감온도
   double rn; //일강수량
+  String? weather;
 
   WeatherModel({
     required this.name,
@@ -11,5 +12,6 @@ class WeatherModel {
     required this.ta,
     required this.pta,
     required this.rn,
+    required this.weather,
   });
 }
