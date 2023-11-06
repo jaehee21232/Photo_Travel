@@ -23,7 +23,7 @@ Future<WeatherModel> getWeatherData(String name) async {
   return WeatherModel(
       name: data[0].text,
       weather: data[1].text,
-      vs: double.parse(data[2].text),
+      vs: data[2].text,
       ta: double.parse(data[5].text),
       pta: double.parse(data[7].text),
       rn: double.parse(data[8].text));
