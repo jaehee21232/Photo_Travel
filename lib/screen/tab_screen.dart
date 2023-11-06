@@ -10,12 +10,14 @@ class TabMainScreen extends StatelessWidget {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        body: TabBarView(children: [
-          HomeScreen(),
-          Text('2'),
-          Text('3'),
-          Text('4'),
-        ]),
+        body: const TabBarView(
+            physics: NeverScrollableScrollPhysics(),
+            children: [
+              HomeScreen(),
+              Text('2'),
+              Text('3'),
+              Text('4'),
+            ]),
         bottomNavigationBar: TabBar(tabs: [
           Tab(
             icon: Icon(
