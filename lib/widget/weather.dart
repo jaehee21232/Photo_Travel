@@ -27,6 +27,8 @@ class WeatherWidget extends StatelessWidget {
       return 'rain_2';
     } else if (weather.contains('눈')) {
       return 'snow';
+    } else if (weather.contains('연무')) {
+      return 'colud_4';
     } else {
       return 'sun';
     }
