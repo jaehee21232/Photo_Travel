@@ -10,6 +10,7 @@ class WeatherWidget extends StatelessWidget {
 
   String weatherIcon(String weather) {
     DateTime now = DateTime.now();
+    print(now.hour);
     print(now);
     if (weather.contains('맑음')) {
       return 'sun';
@@ -29,6 +30,8 @@ class WeatherWidget extends StatelessWidget {
       return 'snow';
     } else if (weather.contains('연무')) {
       return 'colud_4';
+    } else if (now.hour >= 18 || now.hour <= 6) {
+      return 'moon';
     } else {
       return 'sun';
     }
@@ -46,8 +49,8 @@ class WeatherWidget extends StatelessWidget {
             decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.4),
                 borderRadius: BorderRadius.circular(24),
-                border:
-                    Border.all(color: Color.fromARGB(255, 0, 0, 0), width: 2)),
+                border: Border.all(
+                    color: const Color.fromARGB(255, 0, 0, 0), width: 2)),
             width: size.width * (0.75),
             height: size.height * (0.18),
             child: Center(
@@ -109,7 +112,7 @@ class WeatherWidget extends StatelessWidget {
                                 ),
                                 Text(
                                   '시정거리 : ${snapshot.data!.vs}',
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w600),
                                 ),
