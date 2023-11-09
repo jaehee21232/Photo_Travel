@@ -21,10 +21,11 @@ Future<WeatherModel> getWeatherData(String name) async {
       .toList()[0]
       .getElementsByTagName('td');
   return WeatherModel(
-      name: data[0].text,
-      weather: data[1].text,
-      vs: data[2].text,
-      ta: double.parse(data[5].text),
-      pta: double.parse(data[7].text),
-      rn: double.parse(data[8].text));
+    name: data[0].text,
+    weather: data[1].text,
+    vs: data[2].text,
+    ta: data[5].text,
+    pta: data[7].text,
+    rn: data[8].text,
+  );
 }

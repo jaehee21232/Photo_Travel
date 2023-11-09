@@ -1,9 +1,9 @@
 class WeatherModel {
   String name; //지점이름
   String vs; //시정거리
-  double ta; //기온
-  double pta; //체감온도
-  double rn; //일강수량
+  String ta; //기온
+  String pta; //체감온도
+  String rn; //일강수량
   String? weather;
 
   WeatherModel({
