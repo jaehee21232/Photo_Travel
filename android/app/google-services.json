@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "161862878067",
+    "project_id": "phototravel-ea249",
+    "storage_bucket": "phototravel-ea249.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161862878067:android:93211e53fa38028e423b06",
+        "android_client_info": {
+          "package_name": "com.example.photo_travel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACpoJeNGFNz915El4LVTiXW8C5whkDaL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161862878067:android:f5dbd971838ee5fd423b06",
+        "android_client_info": {
+          "package_name": "com.jaehee.phototravel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACpoJeNGFNz915El4LVTiXW8C5whkDaL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

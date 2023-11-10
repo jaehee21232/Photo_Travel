@@ -38,6 +38,8 @@ dependencies:
   banner_carousel: ^1.2.1
   http: ^1.1.0
   html: ^0.15.4
+  flutter_secure_storage: ^9.0.0
+  firebase_core: ^2.22.0
 
 dev_dependencies:
   flutter_test:
