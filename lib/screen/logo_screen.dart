@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:go_router/go_router.dart';
+import 'package:photo_travel/common/data.dart';
 import 'package:photo_travel/main.dart';
 
 class LogoScreen extends StatelessWidget {
@@ -11,6 +12,15 @@ class LogoScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     bool lightTheme =
         MediaQuery.of(context).platformBrightness == Brightness.light;
+
+    void contextGo(String router, bool go) {
+      if (go) {
+        context.go(router);
+      } else {
+        context.push(router);
+      }
+    }
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -22,21 +32,27 @@ class LogoScreen extends StatelessWidget {
             ),
             Column(
               children: [
-                Text('자신의 인생을 기록해보세요'),
+                const Text('자신의 인생을 기록해보세요'),
                 const SizedBox(
                   height: 16,
                 ),
-                Container(
-                  width: size.width * (0.55),
-                  height: size.width * (0.12),
-                  decoration: BoxDecoration(
-                      border: Border.all(),
-                      color: Theme.of(context).canvasColor,
-                      borderRadius: BorderRadius.circular(8)),
-                  child: InkWell(
-                    onTap: () {
-                      context.go('/tab-main');
-                    },
+                InkWell(
+                  borderRadius: BorderRadius.circular(8),
+                  onTap: () async {
+                    final login = await storage.read(key: 'autoLogin');
+                    if (login == null) {
+                      contextGo('/register', false);
+                    } else {
+                      contextGo('/tab-main', true);
+                    }
+                  },
+                  child: Ink(
+                    width: size.width * (0.55),
+                    height: size.width * (0.12),
+                    decoration: BoxDecoration(
+                        border: Border.all(),
+                        color: Theme.of(context).canvasColor,
+                        borderRadius: BorderRadius.circular(8)),
                     child: Center(
                       child: Text(
                         "시작하기",
